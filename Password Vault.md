@@ -16,4 +16,5 @@
 		* Click on Search and your service which you had created for Windows RDP will pop up.
 			* Enter ARCON PAM Windows Password Change Service Port: `45045`
 			* Start Password Change Process.
-		* Your password will rotate.
+		* Your password will rotate internally using port `45045`. 
+* If you want to rotate password through gateway port `45045` has to be open and be added in inbound rules in firewall.
