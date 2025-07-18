@@ -30,12 +30,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Password Vault.md",
+                "file": "Restore Database.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Password Vault"
+              "title": "Restore Database"
             }
           }
         ],
@@ -188,8 +188,8 @@
   },
   "active": "93aed340ade716ac",
   "lastOpenFiles": [
-    "Untitled 1.md",
     "Password Vault.md",
+    "Untitled 1.md",
     "Untitled.canvas",
     "Untitled.md",
     "App Web Browser.md",
