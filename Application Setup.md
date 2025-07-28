@@ -48,11 +48,36 @@ e5e9c0252c05d1e190f046b99e637c852dfdace433452661cc3c4d70c37f
 34f965c0b34d52c73cbfde4ef44cbe3732eb705806ac0900f64f
 ```
 
-* For login we have to add url in `C:\Arcon Solutions\ARCOSClientManagerOnline\web.config`
+* To host and run web applications install these files in `C:\Newfolder\U16_SP2_B35.8.24_OCI\Tools` 
+	* `dotnet-hosting`
+	* `dotnet-sdk`
+	* `NDP47-KB3186497-x86-x64-AllOS-ENU`
+	* `rewrite_amd64`
+	* `vc_redist.x64`
+	* `vc_redist.x86`
+
+* For login we have to add URL in `C:\Arcon Solutions\ARCOSClientManagerOnline\web.config`
 	* Search "domain" by pressing `ctrl + F`
 		* Replace `.arconnet.com` with `hardik.local.com` in `value` field.
 	* Save the file.
 * For accessing `ARCONAPIGateway`
 	* Go into `C:\Arcon Solutions\ARCONAPIGateway\ocelot.json`
-		* Replace Port `865` with Port `8080` which is assigned to `ARCONMicroservicesStack`
-		* Replace default host URL with `localhost` 
+		* Replace Port `865` with Port `8080` which is assigned to `ARCONMicroservicesStack`.
+		* Replace default host URL with `localhost`. 
+		* Replace `https` with `http`.
+* For accessing password module, make changes in the following files:
+	* Go into `C:\ArconSolutions\ARCONMicroservicesStack\commonAPI\auth\appsettings`
+		* Replace this line
+			* `"XWDWEBURL": "https://hardik.local.com/ARCONAPIGateway/xwdui/#/dashboard"`
+	* Go into `C:\Arcon Solutions\ARCONUI\XWDUI\assets`
+		* Replace `"UslcBWKfTo9T6NZ1I+IdEg==": "https://u16hf.arconnet.com:1302/frmLoginACMO.aspx"` with 
+		* Replace `"8SLE9u6FkJgVqJBAaGU//Q==": "https://u16hf.arconnet.com:1302/ARCONAPIGateway"` with `"8SLE9u6FkJgVqJBAaGU//Q==": "https://hardik.local.com/:1302/ARCONAPIGateway",`
+	* Go into `C:\Arcon Solutions\ARCOSClientManagerOnline\SAML\samlSPEntities`
+		* Replace `"ConsumerServiceUrl": "https://u16hf.arconnet.com:1302/ARCONAPIGateway/auth/api/saml/Auth"` with `"ConsumerServiceUrl": "https://hardik.local.com/ARCONAPIGateway/auth/api/saml/Auth"`
+		* Replace `"TargetUrl": "https://u16hf.arconnet.com:1302/ARCONAPIGateway/auth/api/saml/Auth"` with `"TargetUrl": "https://hardik.local.com/ARCONAPIGateway/auth/api/saml/Auth"`
+* To create users:
+	* Add new applications in application list in `ACMO`
+		* `ARCON MS API`: `https://hardik.local.com/ARCONAPIGateway/`
+		* `ARCON Internal API`: `	https://api.hardik.local.com:8443/`
+		* 
+`
